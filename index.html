@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Инженерный Атлас</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<nav>
+  <span class="logo">Инженер<em>.</em>Атлас</span>
+  <a href="#phenomena">Явления</a>
+  <a href="#calculators">Калькуляторы</a>
+  <a href="#mechanisms">Механизмы</a>
+  <a href="#models">3D Объекты</a>
+  <a href="welegenda.html" class="nav-right-link">О НАС</a>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<div id="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-eyebrow">// интерактивный справочник по физике и инженерии</div>
+    <h1>Инженерный<br><span class="c">Атлас</span></h1>
+    <div class="hero-stats">
+      <div class="stat"><div class="n">06</div><div class="l">Явлений</div></div>
+      <div class="stat"><div class="n">03</div><div class="l">Калькулятора</div></div>
+      <div class="stat"><div class="n">04</div><div class="l">Механизма</div></div>
+      <div class="stat"><div class="n">03</div><div class="l">3D Объекта</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">↓ прокрутите</div>
+</div>
+<div class="aitmatov-quote-block">
+    <p class="aitmatov-quote-text">
+        «Знание — это сила, которая делает человека свободным и ответственным за будущее мира.»
+    </p>
+    <p class="aitmatov-quote-author">
+        — Чингиз Айтматов
+    </p>
+</div>
+
+<!-- ═══════════════ PHENOMENA ═══════════════ -->
+<div class="section-wrap" id="phenomena">
+  <div class="section-head">
+    <span class="sec-num">// 01</span>
+    <h2 class="sec-title">Физические явления</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="phenom-grid">
+    <div class="pc fi" data-n="01">
+      <div class="pc-tag">Механика</div>
+      <div class="pc-name">Гармонические колебания</div>
+      <p class="pc-desc">Периодическое движение, при котором тело возвращается в положение равновесия под действием силы, пропорциональной смещению. Основа анализа вибраций и волновых процессов.</p>
+      <div class="pc-formula">F = −k·x &nbsp;·&nbsp; T = 2π√(m/k)</div>
+      <canvas class="pc-viz" id="v1"></canvas>
+    </div>
+    <div class="pc fi" data-n="02">
+      <div class="pc-tag">Термодинамика</div>
+      <div class="pc-name">Теплопроводность</div>
+      <p class="pc-desc">Перенос теплоты от нагретых тел к холодным путём непосредственного взаимодействия молекул. Интенсивность определяется коэффициентом теплопроводности материала.</p>
+      <div class="pc-formula">q = −λ·(dT/dx) &nbsp;[Вт/м²]</div>
+      <canvas class="pc-viz" id="v2"></canvas>
+    </div>
+    <div class="pc fi" data-n="03">
+      <div class="pc-tag">Электромагнетизм</div>
+      <div class="pc-name">Электромагнитная индукция</div>
+      <p class="pc-desc">Возникновение ЭДС в замкнутом контуре при изменении пронизывающего его магнитного потока. Фундамент работы генераторов, трансформаторов и электродвигателей.</p>
+      <div class="pc-formula">ε = −dΦ/dt &nbsp;&nbsp; Φ = B·A·cos α</div>
+      <canvas class="pc-viz" id="v3"></canvas>
+    </div>
+    <div class="pc fi" data-n="04">
+      <div class="pc-tag">Оптика</div>
+      <div class="pc-name">Преломление света</div>
+      <p class="pc-desc">Изменение направления распространения световой волны на границе двух сред с различными оптическими плотностями. Описывается законом Снеллиуса через показатели преломления.</p>
+      <div class="pc-formula">n₁ sin θ₁ = n₂ sin θ₂</div>
+      <canvas class="pc-viz" id="v4"></canvas>
+    </div>
+    <div class="pc fi" data-n="05">
+      <div class="pc-tag">Квантовая физика</div>
+      <div class="pc-name">Волновая функция</div>
+      <p class="pc-desc">Комплексная функция, описывающая квантовое состояние системы. Квадрат её модуля |ψ|² задаёт плотность вероятности обнаружить частицу в данной точке пространства.</p>
+      <div class="pc-formula">iℏ ∂ψ/∂t = Ĥψ &nbsp;(уравнение Шрёдингера)</div>
+      <canvas class="pc-viz" id="v5"></canvas>
+    </div>
+    <div class="pc fi" data-n="06">
+      <div class="pc-tag">Акустика</div>
+      <div class="pc-name">Стоячие волны</div>
+      <p class="pc-desc">Интерференционная картина, возникающая при наложении двух бегущих волн одинаковой частоты и амплитуды, распространяющихся навстречу. Лежит в основе работы музыкальных инструментов.</p>
+      <div class="pc-formula">λₙ = 2L/n &nbsp;· &nbsp;fₙ = n·v/(2L)</div>
+      <canvas class="pc-viz" id="v6"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ═══════════════ CALCULATORS ═══════════════ -->
+<div class="section-wrap" id="calculators">
+  <div class="section-head">
+    <span class="sec-num">// 02</span>
+    <h2 class="sec-title">Интерактивные калькуляторы</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="calc-tabs">
+    <button class="ct active" onclick="showTab('pendulum',this)">Маятник</button>
+    <button class="ct" onclick="showTab('projectile',this)">Баллистика</button>
+    <button class="ct" onclick="showTab('ohm',this)">Закон Ома</button>
+  </div>
+
+  <!-- PENDULUM -->
+  <div class="calc-panel active" id="pnl-pendulum">
+    <div class="cc">
+      <h3>// параметры маятника</h3>
+      <div class="cg">
+        <div class="cl">Длина нити L <span class="cv" id="lL">1.00 м</span></div>
+        <input type="range" id="sL" min="0.1" max="5" step="0.05" value="1" oninput="updPend()">
+      </div>
+      <div class="cg">
+        <div class="cl">Ускорение g <span class="cv" id="lg">9.81 м/с²</span></div>
+        <input type="range" id="sg" min="1.0" max="25" step="0.1" value="9.81" oninput="updPend()">
+      </div>
+      <div class="cg">
+        <div class="cl">Начальный угол α <span class="cv" id="la">30°</span></div>
+        <input type="range" id="sa" min="3" max="80" step="1" value="30" oninput="updPend()">
+      </div>
+      <div class="rb">
+        <div class="rb-label">Период колебания T</div>
+        <div class="rb-val" id="rT">2.007</div>
+        <div class="rb-unit">секунд</div>
+      </div>
+      <div class="rb">
+        <div class="rb-label">Макс. скорость v_max</div>
+        <div class="rb-val" id="rV">1.424</div>
+        <div class="rb-unit">м/с</div>
+      </div>
+      <div class="rb">
+        <div class="rb-label">Частота f</div>
+        <div class="rb-val" id="rF">0.498</div>
+        <div class="rb-unit">Гц</div>
+      </div>
+    </div>
+    <canvas class="sim" id="cPend" width="580" height="380"></canvas>
+  </div>
+
+  <!-- PROJECTILE -->
+  <div class="calc-panel" id="pnl-projectile">
+    <div class="cc">
+      <h3>// параметры броска</h3>
+      <div class="cg">
+        <div class="cl">Начальная скорость v₀ <span class="cv" id="lv0">50 м/с</span></div>
+        <input type="range" id="sv0" min="5" max="200" step="1" value="50" oninput="updProj()">
+      </div>
+      <div class="cg">
+        <div class="cl">Угол броска θ <span class="cv" id="lang">45°</span></div>
+        <input type="range" id="sang" min="1" max="89" step="1" value="45" oninput="updProj()">
+      </div>
+      <div class="cg">
+        <div class="cl">Высота пуска h₀ <span class="cv" id="lh0">0 м</span></div>
+        <input type="range" id="sh0" min="0" max="200" step="1" value="0" oninput="updProj()">
+      </div>
+      <div class="rb">
+        <div class="rb-label">Дальность полёта R</div>
+        <div class="rb-val" id="rR">255.1</div>
+        <div class="rb-unit">метров</div>
+      </div>
+      <div class="rb">
+        <div class="rb-label">Максимальная высота H</div>
+        <div class="rb-val" id="rH">127.6</div>
+        <div class="rb-unit">метров</div>
+      </div>
+      <div class="rb">
+        <div class="rb-label">Время полёта t</div>
+        <div class="rb-val" id="rTf">7.21</div>
+        <div class="rb-unit">секунд</div>
+      </div>
+    </div>
+    <canvas class="sim" id="cProj" width="580" height="380"></canvas>
+  </div>
+
+  <!-- OHM -->
+  <div class="calc-panel" id="pnl-ohm">
+    <div class="cc">
+      <h3>// параметры цепи</h3>
+      <div class="cg">
+        <div class="cl">Напряжение U <span class="cv" id="lU">12 В</span></div>
+        <input type="range" id="sU" min="1" max="240" step="1" value="12" oninput="updOhm()">
+      </div>
+      <div class="cg">
+        <div class="cl">Сопротивление R <span class="cv" id="lR">100 Ом</span></div>
+        <input type="range" id="sR" min="1" max="2000" step="1" value="100" oninput="updOhm()">
+      </div>
+      <div class="rb">
+        <div class="rb-label">Сила тока  I = U / R</div>
+        <div class="rb-val" id="rI">0.1200</div>
+        <div class="rb-unit">ампер</div>
+      </div>
+      <div class="rb">
+        <div class="rb-label">Мощность  P = U · I</div>
+        <div class="rb-val" id="rP">1.440</div>
+        <div class="rb-unit">ватт</div>
+      </div>
+      <div class="rb">
+        <div class="rb-label">Энергия за 1 час  W = P·t</div>
+        <div class="rb-val" id="rW">5.184</div>
+        <div class="rb-unit">кДж</div>
+      </div>
+    </div>
+    <canvas class="sim" id="cOhm" width="580" height="380"></canvas>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ═══════════════ MECHANISMS ═══════════════ -->
+<div class="section-wrap" id="mechanisms">
+  <div class="section-head">
+    <span class="sec-num">// 03</span>
+    <h2 class="sec-title">Механизмы</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="mech-grid">
+
+    <!-- GEARS -->
+    <div class="mc fi">
+      <div class="mc-title">// зубчатая передача</div>
+      <div class="mc-viz">
+        <svg id="gearSvg" width="320" height="200" viewBox="0 0 320 200"></svg>
+      </div>
+      <div style="margin-bottom:.8rem">
+        <div class="cl">Передаточное отношение i = z₂/z₁ <span class="cv" id="lGR">2.00</span></div>
+        <input type="range" id="sGR" min="1" max="4" step="0.5" value="2" oninput="updGears()" style="width:100%">
+      </div>
+      <p class="mc-desc">i = z₂/z₁ = ω₁/ω₂. При i>1 — <span>понижающая передача</span>: скорость падает, крутящий момент растёт пропорционально.</p>
+    </div>
+
+    <!-- LEVER -->
+    <div class="mc fi">
+      <div class="mc-title">// рычаг первого рода</div>
+      <div class="mc-viz">
+        <canvas id="cLever" width="300" height="180"></canvas>
+      </div>
+      <div style="margin-bottom:.8rem">
+        <div class="cl">Положение точки опоры <span class="cv" id="lFulc">50%</span></div>
+        <input type="range" id="sFulc" min="15" max="85" step="1" value="50" oninput="updLever()" style="width:100%">
+      </div>
+      <p class="mc-desc">F₁·d₁ = F₂·d₂ — <span>золотое правило механики</span>. Чем ближе опора к грузу — тем меньше нужна приложенная сила, но тем больше путь.</p>
+    </div>
+
+    <!-- CRANK-SLIDER -->
+    <div class="mc fi">
+      <div class="mc-title">// кривошипно-ползунный механизм</div>
+      <div class="mc-viz">
+        <canvas id="cCrank" width="300" height="180"></canvas>
+      </div>
+      <p class="mc-desc">Преобразует вращение кривошипа в возвратно-поступательное движение ползуна. Основа <span>двигателей внутреннего сгорания</span>, компрессоров и насосов.</p>
+    </div>
+
+    <!-- PULLEY -->
+    <div class="mc fi">
+      <div class="mc-title">// полиспаст (система блоков)</div>
+      <div class="mc-viz">
+        <canvas id="cPulley" width="300" height="180"></canvas>
+      </div>
+      <div style="margin-bottom:.8rem">
+        <div class="cl">Число подвижных блоков n <span class="cv" id="lPulley">2</span></div>
+        <input type="range" id="sPulley" min="1" max="4" step="1" value="2" oninput="updPulley()" style="width:100%">
+      </div>
+      <p class="mc-desc">Выигрыш в силе = <span>2n</span> раз (n — число подвижных блоков). КПД снижается с увеличением числа блоков из-за трения.</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ═══════════════ 3D MODELS ═══════════════ -->
+<div class="section-wrap" id="models">
+  <div class="section-head">
+    <span class="sec-num">// 04</span>
+    <h2 class="sec-title">3D Объекты</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="models-grid">
+    <div class="model-card fi">
+      <div class="model-scene">
+        <div class="cube">
+          <div class="face front"></div><div class="face back"></div>
+          <div class="face left"></div><div class="face right"></div>
+          <div class="face top"></div><div class="face bottom"></div>
+        </div>
+      </div>
+      <div class="model-lbl"><strong>Куб (Гексаэдр)</strong>6 граней · 8 вершин · 12 рёбер</div>
+    </div>
+    <div class="model-card fi">
+      <div class="model-scene">
+        <canvas id="cOcta" width="160" height="160"></canvas>
+      </div>
+      <div class="model-lbl"><strong>Октаэдр</strong>8 граней · 6 вершин · 12 рёбер</div>
+    </div>
+    <div class="model-card fi">
+      <div class="model-scene">
+        <canvas id="cSphere" width="160" height="160"></canvas>
+      </div>
+      <div class="model-lbl"><strong>Сфера (вайрфрейм)</strong>S = 4πr² &nbsp;·&nbsp; V = (4/3)πr³</div>
+    </div>
+  </div>
+</div>
+
+<footer>Инженерный Атлас · Интерактивный справочник по физике и механике · v2.0</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
